@@ -694,7 +694,7 @@ export default function App() {
                         </span>
                       ))}
                     </div>
-                    {project.detail ? (
+                    {project.detail && (
                       <button
                         className="mt-7 flex w-full items-center justify-between border-t border-white/25 pt-5 text-left text-sm transition-colors hover:text-[#d8ff57]"
                         onClick={() => setActiveProject(project)}
@@ -702,9 +702,10 @@ export default function App() {
                         查看项目详情
                         <ArrowIcon diagonal />
                       </button>
-                    ) : project.href ? (
+                    )}
+                    {project.href && (
                       <a
-                        className="mt-7 flex w-full items-center justify-between border-t border-white/25 pt-5 text-sm transition-colors hover:text-[#d8ff57]"
+                        className="mt-2 flex w-full items-center justify-between border-t border-white/25 pt-5 text-sm transition-colors hover:text-[#d8ff57]"
                         href={project.href}
                         target="_blank"
                         rel="noreferrer"
@@ -712,7 +713,7 @@ export default function App() {
                         访问项目
                         <ArrowIcon diagonal />
                       </a>
-                    ) : null}
+                    )}
                   </div>
                 </article>
               ))}
