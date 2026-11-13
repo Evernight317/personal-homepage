@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your profile, work, skills, and contact details in a polished personal homepage that helps visitors learn about you and connect.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
