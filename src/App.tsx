@@ -12,7 +12,8 @@ type Project = {
   detail?: {
     intro: string;
     label: string;
-    steps: string[];
+    steps: { name: string; desc: string }[];
+    stack?: string;
   };
 };
 
@@ -52,7 +53,13 @@ const projects: Project[] = [
       intro:
         "基于 FIPA Contract Net Protocol 的多智能体协作调度框架。用户提交高层目标后，系统自动完成任务分解、Agent 竞标仲裁、ReAct 执行、三层质量校验和冲突消解——无需手动编排 Agent 交互",
       label: "核心流程",
-      steps: ["HTN 任务分解", "契约竞标仲裁", "ReAct 执行引擎", "三层质量门控", "冲突检测消解"],
+      steps: [
+        { name: "HTN 任务分解", desc: "Planner 通过 LLM 将高层目标递归分解为子任务 DAG，自动解析依赖关系" },
+        { name: "契约竞标仲裁", desc: "Agent 通过 CapabilityProfile 声明能力竞标子任务，Auctioneer 按能力/成本/置信度综合评分仲裁" },
+        { name: "ReAct 执行引擎", desc: "Agent 通过 Think→Act→Observe 多轮推理 + 工具调用（文件读写、代码执行、测试运行）完成任务" },
+        { name: "三层质量门控", desc: "Layer 1: JSON Schema 校验 → Layer 2: LLM-as-Judge 语义校验 → Layer 3: 冲突影响检测" },
+        { name: "冲突检测消解", desc: "5 种检测（文件写冲突/接口不一致/语义矛盾/依赖违规/死锁）+ 5 种消解策略，失败时自动重规划" },
+      ],
     },
   },
   {
@@ -65,9 +72,16 @@ const projects: Project[] = [
     art: "trading",
     detail: {
       intro:
-        "能自主完成「看盘—决策—全流程」的量化交易智能体 它不是策略指标的可视化面板，而是一个会读市场、会写策略、会复盘自己的交易员",
+        "一个能自主完成「看盘—决策—执行」全流程的量化交易智能体。它不是策略指标的可视化面板，而是一个会读市场、会写策略、会复盘自己的交易员",
       label: "系统架构",
-      steps: ["行情感知", "策略生成", "风险控制", "回测引擎", "复盘学习"],
+      steps: [
+        { name: "行情感知", desc: "接入实时行情与历史 K 线，构建多维度市场上下文，识别趋势与关键支撑阻力位" },
+        { name: "策略生成", desc: "LLM 基于技术面与基本面分析，生成交易假设与入场出场条件，输出结构化策略" },
+        { name: "风险控制", desc: "仓位管理、止损纪律、情绪过滤——机器没有贪心，严格按风控规则执行每笔交易" },
+        { name: "回测引擎", desc: "每条策略先在历史数据上走一遍，计算胜率、最大回撤、夏普比率，用数据说话" },
+        { name: "复盘学习", desc: "交易结束后自动生成复盘报告，分析盈亏归因，将经验反哺下一次决策" },
+      ],
+      stack: "Python · LangGraph · FastAPI · MySQL · Redis",
     },
   },
   {
@@ -80,9 +94,16 @@ const projects: Project[] = [
     art: "data",
     detail: {
       intro:
-        "把数据分析师的日常工作流——清洗、探索、建模、预测——交给一个 Agent 来编排，让繁杂的数据工作变成清晰、可追踪的智能流程",
+        "给它一份数据和一个问题，它还你一份数据模拟、分析结论与趋势预测。把数据分析师的日常工作流——清洗、探索、建模、预测——交给一个 Agent 来编排",
       label: "Agent 工作流",
-      steps: ["数据理解", "清洗规整", "模拟分析", "建模预测", "结论输出"],
+      steps: [
+        { name: "数据理解", desc: "自动识别字段含义与数据质量，生成探索报告，发现缺失率、分布特征与异常模式" },
+        { name: "清洗规整", desc: "缺失值填补、异常值检测、格式混乱——Agent 自己判断处理策略并执行" },
+        { name: "模拟分析", desc: "统计检验、相关性分析、Monte Carlo 模拟，多角度交叉验证数据中的信号" },
+        { name: "建模预测", desc: "时序预测与回归建模，置信区间一并给出，不回避不确定性" },
+        { name: "结论输出", desc: "生成带图表的分析报告，用人话写结论，不写黑话，每个判断都有数据支撑" },
+      ],
+      stack: "Python · LangChain · FastAPI · pandas · scikit-learn",
     },
   },
 ];
@@ -856,15 +877,24 @@ export default function App() {
               <p className="mb-5 text-xs tracking-[0.18em] text-black/45">
                 {activeProject.detail.label}
               </p>
-              <div className="grid gap-px bg-black/15 sm:grid-cols-5">
+              <div className="space-y-px bg-black/15">
                 {activeProject.detail.steps.map((step, index) => (
-                  <div key={step} className="bg-[#f4f0e8] p-4">
-                    <span className="text-[10px] text-[#1546ff]">0{index + 1}</span>
-                    <p className="mt-6 text-sm font-medium">{step}</p>
+                  <div key={step.name} className="flex gap-5 bg-[#f4f0e8] p-5">
+                    <span className="shrink-0 text-sm font-bold text-[#1546ff]">0{index + 1}</span>
+                    <div>
+                      <p className="text-sm font-semibold">{step.name}</p>
+                      <p className="mt-1.5 text-sm leading-relaxed text-black/55">{step.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+            {activeProject.detail.stack && (
+              <div className="mt-8 border-t border-black/20 pt-6">
+                <p className="mb-3 text-xs tracking-[0.18em] text-black/45">技术栈</p>
+                <p className="text-sm font-medium text-black/75">{activeProject.detail.stack}</p>
+              </div>
+            )}
             <div className="mt-8 flex flex-wrap gap-2">
               {activeProject.tags.map((tag) => (
                 <span key={tag} className="rounded-full border border-black/25 px-4 py-2 text-sm">
