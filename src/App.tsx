@@ -679,7 +679,7 @@ export default function App() {
         <section id="work" className="bg-[#101010] px-5 py-20 text-[#f4f0e8] md:px-10 md:py-28">
           <div className="mx-auto max-w-[1360px]">
             <div
-              className="sticky top-[4.5rem] z-30 mb-14 flex items-end justify-between border-b border-white/20 bg-[#101010]/90 pb-6 backdrop-blur-md md:mb-20"
+              className="sticky top-[4.5rem] z-30 mb-14 flex items-end justify-between border-b border-white/20 pb-6 backdrop-blur-md md:mb-20" style={{ backgroundColor: "rgba(16,16,16,0.85)" }}
               data-reveal="title"
             >
               <div>
@@ -788,7 +788,7 @@ export default function App() {
 
         <section id="contact" className="bg-[#1546ff] px-5 py-20 text-white md:px-10 md:py-24">
           <div className="mx-auto max-w-[1360px]">
-            <div className="sticky top-[4.5rem] z-30 bg-[#1546ff]/90 backdrop-blur-md">
+            <div className="sticky top-[4.5rem] z-30 backdrop-blur-md" style={{ backgroundColor: "rgba(21,70,255,0.85)" }}>
               <p className="text-xs tracking-[0.2em] text-white/60" data-reveal="fade">
                 04 / CONTACT
               </p>
