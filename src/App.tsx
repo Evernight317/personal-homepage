@@ -433,9 +433,16 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" },
     );
-    revealItems.forEach((item) => observer.observe(item));
+    revealItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        item.classList.add("is-visible");
+      } else {
+        observer.observe(item);
+      }
+    });
 
     let frame = 0;
     const update = () => {
@@ -569,7 +576,7 @@ export default function App() {
             LARGE MODEL BACKEND · AGENT DEVELOPER
           </p>
           <h1
-            className="max-w-6xl text-[clamp(1.8rem,5vw,4rem)] font-semibold leading-[0.86] tracking-[-0.075em]"
+            className="max-w-6xl text-[clamp(3.35rem,9.5vw,8.5rem)] font-semibold leading-[0.95] tracking-[-0.075em]"
             data-reveal="title"
           >
             你好，我是
