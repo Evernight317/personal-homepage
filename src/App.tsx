@@ -561,7 +561,7 @@ export default function App() {
         </div>
       </header>
 
-      <main id="top" className="snap-y snap-mandatory">
+      <main id="top">
         <section className="relative mx-auto flex min-h-[94vh] snap-start max-w-[1440px] flex-col justify-end overflow-hidden px-5 pb-12 pt-36 md:px-10 md:pb-16">
           <div className="hero-sticker absolute right-[8%] top-32 hidden border border-black/20 bg-white/40 p-2 lg:block">
             <div className="grid h-28 w-20 place-items-center bg-[#d8ff57]">
