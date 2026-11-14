@@ -839,6 +839,14 @@ export default function App() {
                 ),
               )}
             </div>
+            <div className="mt-16 max-w-3xl space-y-6 border-t border-white/20 pt-10" data-reveal="fade">
+              <blockquote className="text-lg font-medium leading-relaxed text-white/85 md:text-2xl md:leading-relaxed">
+                「流水不腐，户枢不蠹。」
+              </blockquote>
+              <p className="text-sm leading-relaxed text-white/55 md:text-base">
+                水之所以流动，是因为它在寻找更低的地方——而那些最低的地方，往往汇聚成海。璃之所以凝固，是因为它选择在某一刻停下来，成为透明的形状。流动与凝固之间，是创造的全部秘密。
+              </p>
+            </div>
             <div className="mt-12 flex items-center justify-between text-xs text-white/45">
               <span>© 2026 氵璃水</span>
               <a href="#top">BACK TO TOP ↑</a>
