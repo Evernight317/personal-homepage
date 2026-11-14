@@ -557,8 +557,8 @@ export default function App() {
       <main id="top">
         <section className="relative mx-auto flex min-h-[94vh] max-w-[1440px] flex-col justify-end overflow-hidden px-5 pb-12 pt-36 md:px-10 md:pb-16">
           <div className="hero-sticker absolute right-[8%] top-32 hidden border border-black/20 bg-white/40 p-2 lg:block">
-            <div className="grid h-36 w-28 place-items-center bg-[#d8ff57]">
-              <span className="-rotate-6 text-5xl font-black">水.</span>
+            <div className="grid h-28 w-20 place-items-center bg-[#d8ff57]">
+              <span className="-rotate-6 text-4xl font-black">水.</span>
             </div>
             <p className="pt-2 text-center text-[9px] tracking-[0.18em]">CREATE SOMETHING</p>
           </div>
@@ -569,7 +569,7 @@ export default function App() {
             LARGE MODEL BACKEND · AGENT DEVELOPER
           </p>
           <h1
-            className="max-w-6xl text-[clamp(3.35rem,9.5vw,8.5rem)] font-semibold leading-[0.86] tracking-[-0.075em]"
+            className="max-w-6xl text-[clamp(2.5rem,7vw,6rem)] font-semibold leading-[0.86] tracking-[-0.075em]"
             data-reveal="title"
           >
             你好，我是
@@ -580,7 +580,7 @@ export default function App() {
             className="mt-12 grid gap-8 border-t border-black/25 pt-6 md:grid-cols-2 md:items-end"
             data-reveal="fade"
           >
-            <p className="max-w-xl text-lg leading-relaxed tracking-tight md:text-xl">
+            <p className="max-w-xl text-base leading-relaxed tracking-tight md:text-lg">
               大模型后端与 Agent 开发者，喜欢建筑、字画、音乐与文学，也喜欢
               <span className="underline decoration-[#1546ff] decoration-2 underline-offset-4">
                 创造事物
@@ -603,13 +603,15 @@ export default function App() {
         <section id="about" className="border-t border-black/15 px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto grid max-w-[1360px] gap-14 md:grid-cols-12">
             <div className="md:col-span-3">
-              <p className="sticky top-28 text-xs font-semibold tracking-[0.2em] text-[#1546ff]">
-                01 / 关于
-              </p>
+              <div className="sticky top-24">
+                <p className="text-xs font-semibold tracking-[0.2em] text-[#1546ff]">
+                  01 / 关于
+                </p>
+              </div>
             </div>
             <div className="md:col-span-9">
               <h2
-                className="max-w-5xl text-[clamp(2.1rem,4vw,4.2rem)] font-medium leading-[1.14] tracking-[-0.045em]"
+                className="max-w-5xl text-[clamp(1.8rem,3.5vw,3.2rem)] font-medium leading-[1.14] tracking-[-0.045em]"
                 data-reveal="title"
               >
                 在系统与智能体之间，
@@ -677,14 +679,14 @@ export default function App() {
         <section id="work" className="bg-[#101010] px-5 py-20 text-[#f4f0e8] md:px-10 md:py-28">
           <div className="mx-auto max-w-[1360px]">
             <div
-              className="mb-14 flex items-end justify-between border-b border-white/20 pb-6 md:mb-20"
+              className="sticky top-[4.5rem] z-30 mb-14 flex items-end justify-between border-b border-white/20 bg-[#101010]/90 pb-6 backdrop-blur-md md:mb-20"
               data-reveal="title"
             >
               <div>
                 <p className="mb-3 text-xs tracking-[0.2em] text-white/50">
                   SELECTED WORK / 4 PROJECTS
                 </p>
-                <h2 className="text-4xl font-semibold tracking-[-0.05em] md:text-6xl">02 / 项目</h2>
+                <h2 className="text-3xl font-semibold tracking-[-0.05em] md:text-5xl">02 / 项目</h2>
               </div>
               <span className="hidden text-2xl text-white/40 md:block">04</span>
             </div>
@@ -746,13 +748,13 @@ export default function App() {
           <div className="mx-auto max-w-[1360px]">
             <div className="grid gap-12 md:grid-cols-12">
               <div className="md:col-span-3">
-                <p className="sticky top-28 text-xs font-semibold tracking-[0.2em] text-[#1546ff]">
+                <div className="sticky top-24"><p className="text-xs font-semibold tracking-[0.2em] text-[#1546ff]">
                   03 / 随笔
-                </p>
+                </p></div>
               </div>
               <div className="md:col-span-9">
                 <h2
-                  className="mb-12 text-[clamp(2.6rem,5.5vw,5.5rem)] font-semibold leading-none tracking-[-0.06em]"
+                  className="mb-12 text-[clamp(2rem,4.5vw,4rem)] font-semibold leading-none tracking-[-0.06em]"
                   data-reveal="title"
                 >
                   思考与书写
@@ -786,11 +788,13 @@ export default function App() {
 
         <section id="contact" className="bg-[#1546ff] px-5 py-20 text-white md:px-10 md:py-24">
           <div className="mx-auto max-w-[1360px]">
-            <p className="text-xs tracking-[0.2em] text-white/60" data-reveal="fade">
-              04 / CONTACT
-            </p>
+            <div className="sticky top-[4.5rem] z-30 bg-[#1546ff]/90 backdrop-blur-md">
+              <p className="text-xs tracking-[0.2em] text-white/60" data-reveal="fade">
+                04 / CONTACT
+              </p>
+            </div>
             <h2
-              className="my-10 max-w-5xl text-[clamp(3rem,7vw,7rem)] font-semibold leading-[0.94] tracking-[-0.06em]"
+              className="my-10 max-w-5xl text-[clamp(2.2rem,5.5vw,5rem)] font-semibold leading-[0.94] tracking-[-0.06em]"
               data-reveal="title"
             >
               保持联络，
