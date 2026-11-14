@@ -569,7 +569,7 @@ export default function App() {
             LARGE MODEL BACKEND · AGENT DEVELOPER
           </p>
           <h1
-            className="max-w-6xl text-[clamp(2.5rem,7vw,6rem)] font-semibold leading-[0.86] tracking-[-0.075em]"
+            className="max-w-6xl text-[clamp(1.8rem,5vw,4rem)] font-semibold leading-[0.86] tracking-[-0.075em]"
             data-reveal="title"
           >
             你好，我是
