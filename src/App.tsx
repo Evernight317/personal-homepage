@@ -561,8 +561,8 @@ export default function App() {
         </div>
       </header>
 
-      <main id="top">
-        <section className="relative mx-auto flex min-h-[94vh] max-w-[1440px] flex-col justify-end overflow-hidden px-5 pb-12 pt-36 md:px-10 md:pb-16">
+      <main id="top" className="snap-y snap-mandatory">
+        <section className="relative mx-auto flex min-h-[94vh] snap-start max-w-[1440px] flex-col justify-end overflow-hidden px-5 pb-12 pt-36 md:px-10 md:pb-16">
           <div className="hero-sticker absolute right-[8%] top-32 hidden border border-black/20 bg-white/40 p-2 lg:block">
             <div className="grid h-28 w-20 place-items-center bg-[#d8ff57]">
               <span className="-rotate-6 text-4xl font-black">水.</span>
@@ -588,10 +588,7 @@ export default function App() {
             data-reveal="fade"
           >
             <p className="max-w-xl text-base leading-relaxed tracking-tight md:text-lg">
-              大模型后端与 Agent 开发者，喜欢建筑、字画、音乐与文学，也喜欢
-              <span className="underline decoration-[#1546ff] decoration-2 underline-offset-4">
-                创造事物
-              </span>
+              璃是凝固的水，水是流动的璃。在系统的刚性里注入流动，在智能的流动里铸造形状。
             </p>
             <a
               className="group flex items-center justify-between md:justify-end md:gap-5"
@@ -607,7 +604,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="about" className="border-t border-black/15 px-5 py-20 md:px-10 md:py-28">
+        <section id="about" className="snap-start border-t border-black/15 px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto grid max-w-[1360px] gap-14 md:grid-cols-12">
             <div className="md:col-span-3">
               <div className="sticky top-24">
@@ -683,7 +680,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="work" className="bg-[#101010] px-5 py-20 text-[#f4f0e8] md:px-10 md:py-28">
+        <section id="work" className="snap-start bg-[#101010] px-5 py-20 text-[#f4f0e8] md:px-10 md:py-28">
           <div className="mx-auto max-w-[1360px]">
             <div
               className="sticky top-[4.5rem] z-30 mb-14 flex items-end justify-between border-b border-white/20 pb-6 backdrop-blur-md md:mb-20" style={{ backgroundColor: "rgba(16,16,16,0.85)" }}
@@ -751,7 +748,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="writing" className="px-5 py-20 md:px-10 md:py-28">
+        <section id="writing" className="snap-start px-5 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1360px]">
             <div className="grid gap-12 md:grid-cols-12">
               <div className="md:col-span-3">
@@ -793,7 +790,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="bg-[#1546ff] px-5 py-20 text-white md:px-10 md:py-24">
+        <section id="contact" className="snap-start bg-[#1546ff] px-5 py-20 text-white md:px-10 md:py-24">
           <div className="mx-auto max-w-[1360px]">
             <div className="sticky top-[4.5rem] z-30 backdrop-blur-md" style={{ backgroundColor: "rgba(21,70,255,0.85)" }}>
               <p className="text-xs tracking-[0.2em] text-white/60" data-reveal="fade">
