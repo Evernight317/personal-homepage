@@ -328,7 +328,7 @@ function ProjectArtwork({ type }: { type: string }) {
         <span className="absolute left-9 top-8 text-[10px] tracking-[0.22em] text-white/60">
           NORTHEASTERN UNIVERSITY
         </span>
-        <p className="text-[clamp(4rem,9vw,8rem)] font-black leading-none tracking-[-0.1em]">ACM</p>
+        <p className="text-acm font-black leading-none tracking-[-0.1em]">ACM</p>
         <span className="absolute bottom-8 right-9 rounded-full border border-white/40 px-3 py-1 text-[10px]">
           NEUQ
         </span>
@@ -576,7 +576,7 @@ export default function App() {
             LARGE MODEL BACKEND · AGENT DEVELOPER
           </p>
           <h1
-            className="max-w-6xl text-[clamp(3.35rem,9.5vw,8.5rem)] font-semibold leading-[0.95] tracking-[-0.075em]"
+            className="max-w-6xl text-hero font-semibold leading-[0.95] tracking-[-0.075em]"
             data-reveal="title"
           >
             你好，我是
@@ -615,7 +615,7 @@ export default function App() {
             </div>
             <div className="md:col-span-9">
               <h2
-                className="max-w-5xl text-[clamp(1.8rem,3.5vw,3.2rem)] font-medium leading-[1.14] tracking-[-0.045em]"
+                className="max-w-5xl text-section-title font-medium leading-[1.14] tracking-[-0.045em]"
                 data-reveal="title"
               >
                 在系统与智能体之间，
@@ -758,7 +758,7 @@ export default function App() {
               </div>
               <div className="md:col-span-9">
                 <h2
-                  className="mb-12 text-[clamp(2rem,4.5vw,4rem)] font-semibold leading-none tracking-[-0.06em]"
+                  className="mb-12 text-writing-title font-semibold leading-none tracking-[-0.06em]"
                   data-reveal="title"
                 >
                   思考与书写
@@ -798,7 +798,7 @@ export default function App() {
               </p>
             </div>
             <h2
-              className="my-10 max-w-5xl text-[clamp(2.2rem,5.5vw,5rem)] font-semibold leading-[0.94] tracking-[-0.06em]"
+              className="my-10 max-w-5xl text-contact-title font-semibold leading-[0.94] tracking-[-0.06em]"
               data-reveal="title"
             >
               保持联络，

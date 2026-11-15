@@ -5,7 +5,7 @@
   :root {
     --hero-shift: 0px;
     --scroll-progress: 0;
-    font-family: "Space Grotesk", "Noto Sans SC", sans-serif;
+    font-family: "Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
     color: #101010;
     background: #f4f0e8;
     font-synthesis: none;
@@ -42,6 +42,23 @@ html {
 
 section[id], section.snap-start {
   scroll-snap-align: start;
+}
+
+/* Fluid font sizes via CSS variables (Tailwind v4 clamp() arbitrary values unreliable) */
+.text-hero {
+  font-size: clamp(3.35rem, 9.5vw, 8.5rem);
+}
+.text-section-title {
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+}
+.text-writing-title {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+}
+.text-contact-title {
+  font-size: clamp(2.2rem, 5.5vw, 5rem);
+}
+.text-acm {
+  font-size: clamp(4rem, 9vw, 8rem);
 }
 
 @layer components {
