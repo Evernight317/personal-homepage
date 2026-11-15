@@ -37,12 +37,11 @@
 }
 
 html {
-  scroll-snap-type: y mandatory !important;
+  scroll-snap-type: y proximity;
 }
 
 section[id], section.snap-start {
-  scroll-snap-align: start !important;
-  scroll-snap-stop: always !important;
+  scroll-snap-align: start;
 }
 
 @layer components {
