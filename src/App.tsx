@@ -416,7 +416,7 @@ export default function App() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen, activeProject]);
+  }, [menuOpen, activeProject, activeEssay]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -491,7 +491,7 @@ export default function App() {
     <div className="min-h-screen bg-[#f4f0e8] text-[#101010]">
       <div className="scroll-progress" aria-hidden="true" />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-black/15 bg-[#f4f0e8]/90 backdrop-blur-md">
-        <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between px-5 md:px-10">
+        <div className="mx-auto flex h-[4.5rem] max-w-[1440px] items-center justify-between px-5 md:px-10">
           <a
             href="#top"
             className="flex items-center gap-3 font-semibold"
@@ -534,7 +534,7 @@ export default function App() {
           </button>
         </div>
         <div
-          className={`absolute inset-x-0 top-18 h-[calc(100vh-4.5rem)] bg-[#1546ff] px-5 text-white transition-all duration-300 md:hidden ${
+          className={`absolute inset-x-0 top-[4.5rem] h-[calc(100vh-4.5rem)] bg-[#1546ff] px-5 text-white transition-all duration-300 md:hidden ${
             menuOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-4 opacity-0"
           }`}
         >
